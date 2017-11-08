@@ -1,0 +1,190 @@
+/* Fonts Family */
+@font-face {
+  font-family: 'ProximaNova_extra';
+  src: url('../fonts/subset-ProximaNova-Extrabld.eot');
+  src: url('../fonts/subset-ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'), url('../fonts/subset-ProximaNova-Extrabld.woff2') format('woff2'), url('../fonts/subset-ProximaNova-Extrabld.woff') format('woff'), url('../fonts/subset-ProximaNova-Extrabld.ttf') format('truetype'), url('../fonts/subset-ProximaNova-Extrabld.svg#ProximaNova-Extrabld') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova_reg';
+  src: url('../fonts/subset-ProximaNova-Regular.eot');
+  src: url('../fonts/subset-ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/subset-ProximaNova-Regular.woff2') format('woff2'), url('../fonts/subset-ProximaNova-Regular.woff') format('woff'), url('../fonts/subset-ProximaNova-Regular.ttf') format('truetype'), url('../fonts/subset-ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova_bold';
+  src: url('../fonts/subset-ProximaNova-Bold.eot');
+  src: url('../fonts/subset-ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/subset-ProximaNova-Bold.woff2') format('woff2'), url('../fonts/subset-ProximaNova-Bold.woff') format('woff'), url('../fonts/subset-ProximaNova-Bold.ttf') format('truetype'), url('../fonts/subset-ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova_black';
+  src: url('../fonts/subset-ProximaNova-Black.eot');
+  src: url('../fonts/subset-ProximaNova-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/subset-ProximaNova-Black.woff2') format('woff2'), url('../fonts/subset-ProximaNova-Black.woff') format('woff'), url('../fonts/subset-ProximaNova-Black.ttf') format('truetype'), url('../fonts/subset-ProximaNova-Black.svg#ProximaNova-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+/* Basic settings */
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'ProximaNova_reg', sans-serif;
+}
+a:hover {
+  text-decoration: none;
+}
+button:focus,
+input:focus,
+a:focus,
+textarea:focus {
+  outline: none;
+}
+.button {
+  padding: 2rem 3rem;
+  border-radius: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #1669b3;
+  text-transform: uppercase;
+  border: none;
+  transition: all 0.2s;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #135c9c;
+}
+/* Шапка сайта */
+.header {
+  min-height: 10rem;
+  background-color: #191919;
+}
+.header .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 10rem;
+}
+.header .row .schedule {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+.header .row .schedule p {
+  margin-bottom: 0;
+  line-height: 2;
+}
+.header .row .schedule span {
+  font-family: 'ProximaNova_bold', sans-serif;
+}
+.header .row .phone-link {
+  display: block;
+  margin-bottom: 0;
+  line-height: 2;
+  text-align: right;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-family: 'ProximaNova_black', sans-serif;
+}
+.header-btn {
+  padding: 2rem 2.5rem;
+}
+/* Заголовок со списком преимуществ */
+.main {
+  background: url(../img/main-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+.main-content {
+  padding: 10rem 10rem 7rem;
+  background-color: #f7b516;
+  color: #000000;
+}
+.main-title {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+  font-family: 'ProximaNova_black', sans-serif;
+  text-transform: uppercase;
+  line-height: 1.375;
+}
+.main-subtitle {
+  margin-bottom: 10rem;
+  font-size: 2.5rem;
+  font-family: 'ProximaNova_extra', sans-serif;
+}
+.main-features {
+  font-size: 1.8rem;
+}
+.main-features li {
+  padding-left: 5rem;
+  padding-bottom: 4rem;
+}
+.main-features_img-1 {
+  background: url(../img/main/piggy-bank.svg) 0 1rem no-repeat;
+  background-size: 3rem;
+}
+.main-features_img-2 {
+  background: url(../img/main/delivery-truck.svg) 0 1.5rem no-repeat;
+  background-size: 3rem;
+}
+.main-features_img-3 {
+  background: url(../img/main/calendar-with-star.svg) 0 1rem no-repeat;
+  background-size: 3rem;
+}
+.main-features_img-4 {
+  background: url(../img/main/medal.svg) 0 0.5rem no-repeat;
+  background-size: 3rem;
+}
+@media (max-width: 992px) {
+  .header .row .phone-link {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .header .row {
+    padding: 1rem;
+  }
+  .header .row .logo {
+    text-align: center;
+  }
+  .main-content {
+    padding: 4rem 4rem 2rem;
+  }
+  .main-title {
+    font-size: 3.6rem;
+    text-align: center;
+  }
+  .main-subtitle {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+@media (max-width: 550px) {
+  .header .row .schedule {
+    font-size: 1.2rem;
+  }
+  .header .row .phone-link {
+    font-size: 1.2rem;
+  }
+  .header-btn {
+    padding: 1rem 2rem;
+  }
+  .main {
+    background-image: none;
+    background-color: #f7b516;
+  }
+  .main-title {
+    font-size: 2rem;
+  }
+  .main-subtitle {
+    font-size: 1.8rem;
+  }
+  .main-features li {
+    padding-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+}
