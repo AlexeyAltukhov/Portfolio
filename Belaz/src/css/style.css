@@ -176,7 +176,7 @@ textarea:focus {
   background-size: cover;
 }
 .price-block {
-  padding: 10rem 0 10rem;
+  padding: 10rem 0rem 10rem;
 }
 .price-header {
   margin-bottom: 5rem;
@@ -235,9 +235,45 @@ textarea:focus {
   padding: 3rem;
   width: 100%;
 }
+/* Вам не придется ждать */
+.features {
+  background-color: #08243e;
+  color: #ffffff;
+  text-align: center;
+}
+.features-block {
+  padding: 10rem 0rem 10rem;
+}
+.features-header {
+  margin-bottom: 9rem;
+}
+.features-header h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: 'ProximaNova_black', sans-serif;
+  font-size: 3.6rem;
+}
+.features-header p {
+  font-size: 2rem;
+}
+.features-item p {
+  font-size: 1.8rem;
+}
+.features-img {
+  margin-bottom: 5rem;
+  height: 9rem;
+}
+.features-img img {
+  display: block;
+  margin: 0 auto;
+}
 @media (max-width: 992px) {
   .header .row .phone-link {
     font-size: 1.4rem;
+  }
+  .features-block {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 @media (max-width: 768px) {
@@ -281,11 +317,19 @@ textarea:focus {
     background: none;
   }
   .price-block {
-    padding: 4rem 0 4rem;
+    padding: 4rem 0rem 4rem;
   }
   .price-header {
-    font-size: 2rem;
     text-align: center;
+  }
+  .features-block {
+    padding: 4rem 5rem 4rem;
+  }
+  .features-header {
+    margin-bottom: 4rem;
+  }
+  .features-header h2 {
+    font-size: 3rem;
   }
 }
 @media (max-width: 550px) {
@@ -305,10 +349,25 @@ textarea:focus {
     font-size: 2rem;
   }
   .main-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   .main-features li {
     padding-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+  .price-header {
+    font-size: 2rem;
+  }
+  .features-block {
+    padding: 4rem 5rem 4rem;
+  }
+  .features-header h2 {
+    font-size: 2rem;
+  }
+  .features-header p {
+    font-size: 1.6rem;
+  }
+  .features-item p {
     font-size: 1.4rem;
   }
 }

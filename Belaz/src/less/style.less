@@ -65,16 +65,19 @@
 @btn-yellow: #f7b516;
 @bg-light: #fff;
 @bg-dark: #191919;
+@bg-blue: #08243e;
 @bg-light-blue: #0b3554;
 @bg-yellow: #f7b516;
 @bg-input: #f2f2f2;
-@fs-title: 3.6rem;
-@fs-title-big: 4rem;
-@fs-title-small: 3rem;
+@fs-title-big: 3.6rem;
+@fs-title-main: 4rem;
+@fs-title: 3rem;
+@fs-title-small: 2rem;
 @fs-subtitle: 2rem;
 @fs-subtitle-big: 2.5rem;
-@fs-subtitle-small: 1.8rem;
+@fs-subtitle-small: 1.6rem;
 @fs-caption: 1.8rem;
+@fs-caption-small: 1.6rem;
 @fs-small: 1.4rem;
 @fs-btn: 1.7rem;
 @fs-btn-small: 1.2rem;
@@ -128,6 +131,13 @@ button, input, a, textarea {
 	background-color: @bg-input;
 	border: none;
 }
+.block-padding() {
+	padding: 10rem 0rem 10rem;
+}
+.block-padding_mobile() {
+	padding: 4rem 0rem 4rem;
+}
+
 /* Шапка сайта */
 .header {
 	min-height: 10rem;
@@ -178,7 +188,7 @@ button, input, a, textarea {
 	&-title {
 		margin-top: 0;
 		margin-bottom: 3rem;
-		font-size: @fs-title-big;
+		font-size: @fs-title-main;
 		.black();
 		text-transform: uppercase;
 		line-height: 1.375;
@@ -217,14 +227,14 @@ button, input, a, textarea {
 	background: url(../img/price/get-price-bg.jpg) center no-repeat;
 	background-size: cover;
 	&-block {
-		padding: 10rem 0 10rem;
+		.block-padding();
 	}
 	&-header {
 		margin-bottom: 5rem;
 		margin-top: 0;
 		.black();
 		color: @text-dark;
-		font-size: @fs-title-small;
+		font-size: @fs-title;
 		text-align: right;
 	}
 	&-form {
@@ -279,6 +289,40 @@ button, input, a, textarea {
 		}
 	}
 }
+/* Вам не придется ждать */
+.features {
+	background-color: @bg-blue;
+	color: @text-light;
+	text-align: center;
+	&-block {
+		.block-padding();
+	}
+	&-header {
+		margin-bottom: 9rem;
+		h2 {
+			margin-top: 0;
+			margin-bottom: 2rem;
+			.black();
+			font-size: @fs-title-big;
+		}
+		p {
+			font-size: @fs-subtitle;
+		}
+	}
+	&-item {
+		p {
+			font-size: @fs-caption;
+		}
+	}
+	&-img {
+		margin-bottom: 5rem;
+		height: 9rem;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
 @media (max-width: 992px) {
 	.header {
 		.row {
@@ -287,6 +331,12 @@ button, input, a, textarea {
 					font-size: @fs-small;
 				}
 			}
+		}
+	}
+	.features {
+		&-block {
+			padding-left: 5rem;
+			padding-right: 5rem;
 		}
 	}
 }
@@ -306,7 +356,7 @@ button, input, a, textarea {
 			color: @text-light;
 		}
 		&-title {
-			font-size: @fs-title;
+			font-size: @fs-title-big;
 			text-align: center;
 		}
 		&-subtitle {
@@ -334,11 +384,21 @@ button, input, a, textarea {
 	.price {
 		background: none;
 		&-block {
-			padding: 4rem 0 4rem;
+			.block-padding_mobile();
 		}
 		&-header {
-			font-size: @fs-subtitle;
 			text-align: center;
+		}
+	}
+	.features {
+		&-block {
+			padding: 4rem 5rem 4rem;
+		}
+		&-header {
+			margin-bottom: 4rem;
+			h2 {
+				font-size: @fs-title;
+			}
 		}
 	}
 }
@@ -363,7 +423,7 @@ button, input, a, textarea {
 			padding: 4rem 1.7rem 2rem;
 		}
 		&-title {
-			font-size: @fs-subtitle;
+			font-size: @fs-title-small;
 		}
 		&-subtitle {
 			font-size: @fs-subtitle-small;
@@ -371,6 +431,29 @@ button, input, a, textarea {
 		&-features {
 			li {
 				padding-bottom: 2rem;
+				font-size: @fs-small;
+			}
+		}
+	}
+	.price {
+		&-header {
+			font-size: @fs-title-small;
+		}
+	}
+	.features {
+		&-block {
+			padding: 4rem 5rem 4rem;
+		}
+		&-header {
+			h2 {
+				font-size: @fs-title-small;
+			}
+			p {
+				font-size: @fs-subtitle-small;
+			}
+		}
+		&-item {
+			p {
 				font-size: @fs-small;
 			}
 		}
