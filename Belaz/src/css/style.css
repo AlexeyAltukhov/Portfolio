@@ -43,19 +43,50 @@ a:focus,
 textarea:focus {
   outline: none;
 }
+::-webkit-input-placeholder {
+  color: #818181;
+  text-transform: uppercase;
+}
+::-moz-placeholder {
+  color: #818181;
+  text-transform: uppercase;
+}
+/* Firefox 19+ */
+:-moz-placeholder {
+  color: #818181;
+  text-transform: uppercase;
+}
+/* Firefox 18- */
+:-ms-input-placeholder {
+  color: #818181;
+  text-transform: uppercase;
+}
 .button {
   padding: 2rem 3rem;
   border-radius: none;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
+  font-family: 'ProximaNova_bold', sans-serif;
   color: #ffffff;
-  background-color: #1669b3;
   text-transform: uppercase;
   border: none;
   transition: all 0.2s;
 }
+.button_blue {
+  background-color: #1669b3;
+}
+.button_yellow {
+  background-color: #f7b516;
+}
 .button:hover {
   cursor: pointer;
   background-color: #135c9c;
+}
+.form-input {
+  padding: 3rem 7rem 3rem 3rem;
+  width: 100%;
+  font-size: 1.3rem;
+  background-color: #f2f2f2;
+  border: none;
 }
 /* Шапка сайта */
 .header {
@@ -91,6 +122,7 @@ textarea:focus {
 }
 .header-btn {
   padding: 2rem 2.5rem;
+  font-size: 1.2rem;
 }
 /* Заголовок со списком преимуществ */
 .main {
@@ -98,7 +130,7 @@ textarea:focus {
   background-size: cover;
 }
 .main-content {
-  padding: 10rem 10rem 7rem;
+  padding: 9rem 10rem 6rem;
   background-color: #f7b516;
   color: #000000;
 }
@@ -131,12 +163,77 @@ textarea:focus {
   background-size: 3rem;
 }
 .main-features_img-3 {
-  background: url(../img/main/calendar-with-star.svg) 0 1rem no-repeat;
+  background: url(../img/main/calendar.svg) 0 1rem no-repeat;
   background-size: 3rem;
 }
 .main-features_img-4 {
   background: url(../img/main/medal.svg) 0 0.5rem no-repeat;
   background-size: 3rem;
+}
+/* Получите прайс */
+.price {
+  background: url(../img/price/get-price-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+.price-block {
+  padding: 10rem 0 10rem;
+}
+.price-header {
+  margin-bottom: 5rem;
+  margin-top: 0;
+  font-family: 'ProximaNova_black', sans-serif;
+  color: #000000;
+  font-size: 3rem;
+  text-align: right;
+}
+.price-form .input-email {
+  position: relative;
+}
+.price-form .input-email:before {
+  position: absolute;
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  top: 3rem;
+  right: 3rem;
+  background: url(../img/envelope.svg) 0 0 no-repeat;
+  background-size: 100%;
+}
+.price-form .input-tel {
+  position: relative;
+}
+.price-form .input-tel:before {
+  position: absolute;
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  top: 3rem;
+  right: 3rem;
+  background: url(../img/phone.svg) 0 0 no-repeat;
+  background-size: 100%;
+}
+.price-form .form-input {
+  margin-bottom: 3rem;
+}
+.price-form .wait-price {
+  display: flex;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.price-form .wait-price p {
+  display: inline-block;
+  margin: 0;
+  text-align: right;
+}
+.price-form .wait-price img {
+  width: 3rem;
+  margin-left: 3rem;
+}
+.price-form .price-btn {
+  padding: 3rem;
+  width: 100%;
 }
 @media (max-width: 992px) {
   .header .row .phone-link {
@@ -152,6 +249,8 @@ textarea:focus {
   }
   .main-content {
     padding: 4rem 4rem 2rem;
+    background-color: rgba(25, 25, 25, 0.7);
+    color: #ffffff;
   }
   .main-title {
     font-size: 3.6rem;
@@ -159,6 +258,32 @@ textarea:focus {
   }
   .main-subtitle {
     margin-bottom: 4rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .main-features_img-1 {
+    background: url(../img/main/piggy-bank-light.svg) 0 1rem no-repeat;
+    background-size: 3rem;
+  }
+  .main-features_img-2 {
+    background: url(../img/main/delivery-truck-light.svg) 0 1.5rem no-repeat;
+    background-size: 3rem;
+  }
+  .main-features_img-3 {
+    background: url(../img/main/calendar-light.svg) 0 1rem no-repeat;
+    background-size: 3rem;
+  }
+  .main-features_img-4 {
+    background: url(../img/main/medal-light.svg) 0 0.5rem no-repeat;
+    background-size: 3rem;
+  }
+  .price {
+    background: none;
+  }
+  .price-block {
+    padding: 4rem 0 4rem;
+  }
+  .price-header {
     font-size: 2rem;
     text-align: center;
   }
@@ -173,9 +298,8 @@ textarea:focus {
   .header-btn {
     padding: 1rem 2rem;
   }
-  .main {
-    background-image: none;
-    background-color: #f7b516;
+  .main-content {
+    padding: 4rem 1.7rem 2rem;
   }
   .main-title {
     font-size: 2rem;

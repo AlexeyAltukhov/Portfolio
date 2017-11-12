@@ -65,7 +65,6 @@
 @btn-yellow: #f7b516;
 @bg-light: #fff;
 @bg-dark: #191919;
-@bg-blue: #08243e;
 @bg-light-blue: #0b3554;
 @bg-yellow: #f7b516;
 @bg-input: #f2f2f2;
@@ -79,6 +78,7 @@
 @fs-small: 1.4rem;
 @fs-btn: 1.7rem;
 @fs-btn-small: 1.2rem;
+@fs-input: 1.3rem;
 
 /* Basic settings */
 html {
@@ -95,19 +95,38 @@ button, input, a, textarea {
 		outline: none;
 	}
 }
+::-webkit-input-placeholder {color:@text-input;text-transform:uppercase;}
+::-moz-placeholder          {color:@text-input;text-transform:uppercase;}/* Firefox 19+ */
+:-moz-placeholder           {color:@text-input;text-transform:uppercase;}/* Firefox 18- */
+:-ms-input-placeholder      {color:@text-input;text-transform:uppercase;}
+
 .button {
 	padding: 2rem 3rem;
+	//width: 100%;
 	border-radius: none;
-	font-size: 1.2rem;
+	font-size: @fs-btn;
+	.bold();
 	color: @text-light;
-	background-color: @btn-blue;
 	text-transform: uppercase;
 	border: none;
 	transition: all 0.2s;
+	&_blue {
+		background-color: @btn-blue;
+	}
+	&_yellow {
+		background-color: @btn-yellow;
+	}
 	&:hover {
 		cursor: pointer;
 		background-color: darken(@btn-blue, 5%);
 	}
+}
+.form-input {
+	padding: 3rem 7rem 3rem 3rem;
+	width: 100%;
+	font-size: @fs-input;
+	background-color: @bg-input;
+	border: none;
 }
 /* Шапка сайта */
 .header {
@@ -144,6 +163,7 @@ button, input, a, textarea {
 	}
 	&-btn {
 		padding: 2rem 2.5rem;
+		font-size: @fs-btn-small;
 	}
 }
 /* Заголовок со списком преимуществ */
@@ -151,7 +171,7 @@ button, input, a, textarea {
 	background: url(../img/main-bg.jpg) center no-repeat;
 	background-size: cover;
 	&-content {
-		padding: 10rem 10rem 7rem;
+		padding: 9rem 10rem 6rem;
 		background-color: @bg-yellow;
 		color: @text-dark;
 	}
@@ -183,7 +203,7 @@ button, input, a, textarea {
 			background-size: 3rem;
 		}
 		&_img-3 {
-			background: url(../img/main/calendar-with-star.svg) 0 1rem no-repeat;
+			background: url(../img/main/calendar.svg) 0 1rem no-repeat;
 			background-size: 3rem;
 		}
 		&_img-4 {
@@ -192,7 +212,73 @@ button, input, a, textarea {
 		}
 	}
 }
-
+/* Получите прайс */
+.price {
+	background: url(../img/price/get-price-bg.jpg) center no-repeat;
+	background-size: cover;
+	&-block {
+		padding: 10rem 0 10rem;
+	}
+	&-header {
+		margin-bottom: 5rem;
+		margin-top: 0;
+		.black();
+		color: @text-dark;
+		font-size: @fs-title-small;
+		text-align: right;
+	}
+	&-form {
+		.input-email {
+			position: relative;
+			&:before {
+				position: absolute;
+				content: '';
+				width: 2rem;
+				height: 2rem;
+				top: 3rem;
+				right: 3rem;
+				background: url(../img/envelope.svg) 0 0 no-repeat;
+				background-size: 100%;
+			}
+		}
+		.input-tel {
+			position: relative;
+			&:before {
+				position: absolute;
+				content: '';
+				width: 2rem;
+				height: 2rem;
+				top: 3rem;
+				right: 3rem;
+				background: url(../img/phone.svg) 0 0 no-repeat;
+				background-size: 100%;
+			}
+		}
+		.form-input {
+			margin-bottom: 3rem;
+		}
+		.wait-price {
+			display: flex;
+			min-height: 8rem;
+			align-items: center;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			p {
+				display: inline-block;
+				margin: 0;
+				text-align: right;
+			}
+			img {
+				width: 3rem;
+				margin-left: 3rem;
+			}
+		}
+		.price-btn {
+			padding: 3rem;
+			width: 100%;
+		}
+	}
+}
 @media (max-width: 992px) {
 	.header {
 		.row {
@@ -216,6 +302,8 @@ button, input, a, textarea {
 	.main {
 		&-content {
 			padding: 4rem 4rem 2rem;
+			background-color: rgba(25, 25, 25, 0.7);
+			color: @text-light;
 		}
 		&-title {
 			font-size: @fs-title;
@@ -223,6 +311,32 @@ button, input, a, textarea {
 		}
 		&-subtitle {
 			margin-bottom: 4rem;
+			font-size: @fs-subtitle;
+			text-align: center;
+		}
+		&-features_img-1 {
+			background: url(../img/main/piggy-bank-light.svg) 0 1rem no-repeat;			
+			background-size: 3rem;
+		}
+		&-features_img-2 {
+			background: url(../img/main/delivery-truck-light.svg) 0 1.5rem no-repeat;			
+			background-size: 3rem;
+		}
+		&-features_img-3 {
+			background: url(../img/main/calendar-light.svg) 0 1rem no-repeat;			
+			background-size: 3rem;
+		}
+		&-features_img-4 {
+			background: url(../img/main/medal-light.svg) 0 0.5rem no-repeat;			
+			background-size: 3rem;
+		}
+	}
+	.price {
+		background: none;
+		&-block {
+			padding: 4rem 0 4rem;
+		}
+		&-header {
 			font-size: @fs-subtitle;
 			text-align: center;
 		}
@@ -245,8 +359,9 @@ button, input, a, textarea {
 		}
 	}
 	.main {
-		background-image: none;
-		background-color: @bg-yellow;
+		&-content {
+			padding: 4rem 1.7rem 2rem;
+		}
 		&-title {
 			font-size: @fs-subtitle;
 		}
