@@ -66,6 +66,7 @@ textarea:focus {
   text-transform: uppercase;
 }
 .block-title {
+  margin-top: 0;
   font-family: 'ProximaNova_black', sans-serif;
   font-size: 3rem;
 }
@@ -317,6 +318,41 @@ textarea:focus {
   font-family: 'ProximaNova_extra', sans-serif;
   font-size: 3rem;
 }
+/* Мы гарантируем сохранность */
+.warranty {
+  background-color: #ffffff;
+}
+.warranty-block {
+  padding: 10rem 0rem 10rem;
+  color: #000000;
+  text-align: center;
+}
+.warranty-title {
+  margin-bottom: 9rem;
+  font-size: 3.6rem;
+}
+.warranty-item {
+  margin-bottom: 2rem;
+}
+.warranty-img {
+  margin-bottom: 3rem;
+}
+.warranty-caption {
+  margin-bottom: 2rem;
+  min-height: 6rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+.warranty-link {
+  font-family: 'ProximaNova_bold', sans-serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #000000;
+  font-size: 1.8rem;
+}
+.warranty-link:hover {
+  color: #1a1a1a;
+}
 @media (max-width: 992px) {
   .header .row .phone-link {
     font-size: 1.4rem;
@@ -385,6 +421,12 @@ textarea:focus {
   .detail-block {
     padding: 4rem 0rem 4rem;
   }
+  .warranty-block {
+    padding: 4rem 0rem 4rem;
+  }
+  .warranty-title {
+    margin-bottom: 4rem;
+  }
 }
 @media (max-width: 550px) {
   .form-input {
@@ -436,5 +478,12 @@ textarea:focus {
   }
   .detail-header {
     margin-bottom: 3rem;
+  }
+  .warranty-caption {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+  .warranty-link {
+    font-size: 1.6rem;
   }
 }

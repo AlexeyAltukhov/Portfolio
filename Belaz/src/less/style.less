@@ -107,6 +107,7 @@ button, input, a, textarea {
 
 .block {
 	&-title {
+		margin-top: 0;
 		.black();
 		font-size: @fs-title;
 	}
@@ -372,6 +373,41 @@ button, input, a, textarea {
 		}
 	}
 }
+/* Мы гарантируем сохранность */
+.warranty {
+	background-color: @bg-light;
+	&-block {
+		.block-padding();
+		color: @text-dark;
+		text-align: center;
+	}
+	&-title {
+		margin-bottom: 9rem;
+		font-size: @fs-title-big;
+	}
+	&-item {
+		margin-bottom: 2rem;
+	}
+	&-img {
+		margin-bottom: 3rem;
+	}
+	&-caption {
+		margin-bottom: 2rem;
+		min-height: 6rem;
+		font-size: @fs-caption;
+		line-height: 1.2;
+	}
+	&-link {
+		.bold();
+		text-transform: uppercase;
+		text-decoration: underline;
+		color: @text-dark;
+		font-size: @fs-caption;
+		&:hover {
+			color: lighten(@text-dark, 10%);
+		}
+	}
+}
 @media (max-width: 992px) {
 	.header {
 		.row {
@@ -456,6 +492,14 @@ button, input, a, textarea {
 			.block-padding_mobile();
 		}
 	}
+	.warranty {
+		&-block {
+			.block-padding_mobile();
+		}
+		&-title {
+			margin-bottom: 4rem;
+		}
+	}
 }
 @media (max-width: 550px) {
 	.form-input {
@@ -533,8 +577,14 @@ button, input, a, textarea {
 		&-header {
 			margin-bottom: 3rem;
 		}
-		.call-wait {
-
+	}
+	.warranty {
+		&-caption {
+			margin-bottom: 0;
+			font-size: @fs-caption-small;
+		}
+		&-link {
+			font-size: @fs-caption-small;
 		}
 	}
 }
