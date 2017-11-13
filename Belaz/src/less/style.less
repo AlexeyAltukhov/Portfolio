@@ -59,6 +59,7 @@
 	font-family: 'ProximaNova_extra', sans-serif;
 }
 @text-light: #fff;
+@text-yellow: #f7b516;
 @text-dark: #000;
 @text-input: #818181;
 @btn-blue: #1669b3;
@@ -81,7 +82,7 @@
 @fs-small: 1.4rem;
 @fs-btn: 1.7rem;
 @fs-btn-small: 1.2rem;
-@fs-input: 1.3rem;
+@fs-input: 2rem;
 
 /* Basic settings */
 html {
@@ -98,10 +99,10 @@ button, input, a, textarea {
 		outline: none;
 	}
 }
-::-webkit-input-placeholder {color:@text-input;text-transform:uppercase;}
-::-moz-placeholder          {color:@text-input;text-transform:uppercase;}/* Firefox 19+ */
-:-moz-placeholder           {color:@text-input;text-transform:uppercase;}/* Firefox 18- */
-:-ms-input-placeholder      {color:@text-input;text-transform:uppercase;}
+::-webkit-input-placeholder {font-size:@fs-small;color:@text-input;text-transform:uppercase;}
+::-moz-placeholder          {font-size:@fs-small;color:@text-input;text-transform:uppercase;}/* Firefox 19+ */
+:-moz-placeholder           {font-size:@fs-small;color:@text-input;text-transform:uppercase;}/* Firefox 18- */
+:-ms-input-placeholder      {font-size:@fs-small;color:@text-input;text-transform:uppercase;}
 
 .button {
 	padding: 2rem 3rem;
@@ -125,7 +126,7 @@ button, input, a, textarea {
 	}
 }
 .form-input {
-	padding: 3rem 7rem 3rem 3rem;
+	padding: 2.5rem 7rem 2.5rem 2.5rem;
 	width: 100%;
 	font-size: @fs-input;
 	background-color: @bg-input;
@@ -283,10 +284,10 @@ button, input, a, textarea {
 				margin-left: 3rem;
 			}
 		}
-		.price-btn {
-			padding: 3rem;
-			width: 100%;
-		}
+	}
+	&-btn {
+		padding: 3rem;
+		width: 100%;
 	}
 }
 /* Вам не придется ждать */
@@ -358,6 +359,7 @@ button, input, a, textarea {
 		&-title {
 			font-size: @fs-title-big;
 			text-align: center;
+			color: @text-yellow;
 		}
 		&-subtitle {
 			margin-bottom: 4rem;
@@ -438,6 +440,26 @@ button, input, a, textarea {
 	.price {
 		&-header {
 			font-size: @fs-title-small;
+			margin-bottom: 2rem;
+		}
+		&-form {
+			.input-email {
+				&:before {
+					top: 2rem;
+				}
+			}
+			.input-tel {
+				&:before {
+					top: 1.8rem;
+				}
+			}
+			.form-input {
+				padding: 1.5rem 6rem 1.5rem 1.5rem;
+				margin-bottom: 1rem;
+			}
+		}
+		&-btn {
+			padding: 1.5rem;
 		}
 	}
 	.features {

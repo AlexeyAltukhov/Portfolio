@@ -44,20 +44,24 @@ textarea:focus {
   outline: none;
 }
 ::-webkit-input-placeholder {
+  font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
 }
 ::-moz-placeholder {
+  font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
 }
 /* Firefox 19+ */
 :-moz-placeholder {
+  font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
 }
 /* Firefox 18- */
 :-ms-input-placeholder {
+  font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
 }
@@ -82,9 +86,9 @@ textarea:focus {
   background-color: #135c9c;
 }
 .form-input {
-  padding: 3rem 7rem 3rem 3rem;
+  padding: 2.5rem 7rem 2.5rem 2.5rem;
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 2rem;
   background-color: #f2f2f2;
   border: none;
 }
@@ -231,7 +235,7 @@ textarea:focus {
   width: 3rem;
   margin-left: 3rem;
 }
-.price-form .price-btn {
+.price-btn {
   padding: 3rem;
   width: 100%;
 }
@@ -291,6 +295,7 @@ textarea:focus {
   .main-title {
     font-size: 3.6rem;
     text-align: center;
+    color: #f7b516;
   }
   .main-subtitle {
     margin-bottom: 4rem;
@@ -357,6 +362,20 @@ textarea:focus {
   }
   .price-header {
     font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .price-form .input-email:before {
+    top: 2rem;
+  }
+  .price-form .input-tel:before {
+    top: 1.8rem;
+  }
+  .price-form .form-input {
+    padding: 1.5rem 6rem 1.5rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .price-btn {
+    padding: 1.5rem;
   }
   .features-block {
     padding: 4rem 5rem 4rem;
