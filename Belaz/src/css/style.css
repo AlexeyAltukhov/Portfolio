@@ -65,6 +65,13 @@ textarea:focus {
   color: #818181;
   text-transform: uppercase;
 }
+.block-title {
+  font-family: 'ProximaNova_black', sans-serif;
+  font-size: 3rem;
+}
+.block-subtitle {
+  font-size: 2rem;
+}
 .button {
   padding: 2rem 3rem;
   border-radius: none;
@@ -78,19 +85,29 @@ textarea:focus {
 .button_blue {
   background-color: #1669b3;
 }
+.button_blue:hover {
+  cursor: pointer;
+  background-color: #104e86;
+}
 .button_yellow {
   background-color: #f7b516;
 }
-.button:hover {
+.button_yellow:hover {
   cursor: pointer;
-  background-color: #135c9c;
+  background-color: #d39707;
 }
 .form-input {
-  padding: 2.5rem 7rem 2.5rem 2.5rem;
+  padding: 2rem 7rem 2rem 2.5rem;
+  margin-bottom: 3rem;
   width: 100%;
   font-size: 2rem;
   background-color: #f2f2f2;
   border: none;
+}
+.form-btn {
+  padding: 2rem;
+  width: 100%;
+  font-size: 2rem;
 }
 /* Шапка сайта */
 .header {
@@ -142,7 +159,6 @@ textarea:focus {
   margin-top: 0;
   margin-bottom: 3rem;
   font-size: 4rem;
-  font-family: 'ProximaNova_black', sans-serif;
   text-transform: uppercase;
   line-height: 1.375;
 }
@@ -182,12 +198,10 @@ textarea:focus {
 .price-block {
   padding: 10rem 0rem 10rem;
 }
-.price-header {
+.price-title {
   margin-bottom: 5rem;
   margin-top: 0;
-  font-family: 'ProximaNova_black', sans-serif;
   color: #000000;
-  font-size: 3rem;
   text-align: right;
 }
 .price-form .input-email {
@@ -198,7 +212,7 @@ textarea:focus {
   content: '';
   width: 2rem;
   height: 2rem;
-  top: 3rem;
+  top: 2.5rem;
   right: 3rem;
   background: url(../img/envelope.svg) 0 0 no-repeat;
   background-size: 100%;
@@ -211,27 +225,24 @@ textarea:focus {
   content: '';
   width: 2rem;
   height: 2rem;
-  top: 3rem;
+  top: 2.5rem;
   right: 3rem;
   background: url(../img/phone.svg) 0 0 no-repeat;
   background-size: 100%;
 }
-.price-form .form-input {
-  margin-bottom: 3rem;
-}
-.price-form .wait-price {
+.price-wait {
   display: flex;
   min-height: 8rem;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
 }
-.price-form .wait-price p {
+.price-wait p {
   display: inline-block;
   margin: 0;
   text-align: right;
 }
-.price-form .wait-price img {
+.price-wait img {
   width: 3rem;
   margin-left: 3rem;
 }
@@ -251,14 +262,10 @@ textarea:focus {
 .features-header {
   margin-bottom: 9rem;
 }
-.features-header h2 {
+.features-title {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-family: 'ProximaNova_black', sans-serif;
   font-size: 3.6rem;
-}
-.features-header p {
-  font-size: 2rem;
 }
 .features-item p {
   font-size: 1.8rem;
@@ -270,6 +277,45 @@ textarea:focus {
 .features-img img {
   display: block;
   margin: 0 auto;
+}
+/* Ищете конкретную деталь */
+.detail {
+  background: url(../img/detail-bg.jpg) center no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+.detail-block {
+  padding: 10rem 0rem 10rem;
+}
+.detail-header {
+  margin-bottom: 5rem;
+}
+.detail-title {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+.detail-subtitle {
+  line-height: 1.2;
+}
+.detail-subtitle span {
+  text-transform: uppercase;
+}
+.detail-form {
+  margin-bottom: 2rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.detail .call {
+  font-size: 1.4rem;
+}
+.detail .call-wait {
+  margin-bottom: 3rem;
+}
+.detail .call .phone {
+  margin-bottom: 0;
+  font-family: 'ProximaNova_extra', sans-serif;
+  font-size: 3rem;
 }
 @media (max-width: 992px) {
   .header .row .phone-link {
@@ -324,7 +370,7 @@ textarea:focus {
   .price-block {
     padding: 4rem 0rem 4rem;
   }
-  .price-header {
+  .price-title {
     text-align: center;
   }
   .features-block {
@@ -333,11 +379,27 @@ textarea:focus {
   .features-header {
     margin-bottom: 4rem;
   }
-  .features-header h2 {
+  .features-title {
     font-size: 3rem;
+  }
+  .detail-block {
+    padding: 4rem 0rem 4rem;
   }
 }
 @media (max-width: 550px) {
+  .form-input {
+    padding: 1.5rem 6rem 1.5rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .form-btn {
+    padding: 1.5rem;
+  }
+  .block-title {
+    font-size: 2rem;
+  }
+  .block-subtitle {
+    font-size: 1.6rem;
+  }
   .header .row .schedule {
     font-size: 1.2rem;
   }
@@ -350,18 +412,11 @@ textarea:focus {
   .main-content {
     padding: 4rem 1.7rem 2rem;
   }
-  .main-title {
-    font-size: 2rem;
-  }
-  .main-subtitle {
-    font-size: 1.6rem;
-  }
   .main-features li {
     padding-bottom: 2rem;
     font-size: 1.4rem;
   }
   .price-header {
-    font-size: 2rem;
     margin-bottom: 2rem;
   }
   .price-form .input-email:before {
@@ -370,23 +425,16 @@ textarea:focus {
   .price-form .input-tel:before {
     top: 1.8rem;
   }
-  .price-form .form-input {
-    padding: 1.5rem 6rem 1.5rem 1.5rem;
-    margin-bottom: 1rem;
-  }
   .price-btn {
     padding: 1.5rem;
   }
   .features-block {
     padding: 4rem 5rem 4rem;
   }
-  .features-header h2 {
-    font-size: 2rem;
-  }
-  .features-header p {
-    font-size: 1.6rem;
-  }
   .features-item p {
     font-size: 1.4rem;
+  }
+  .detail-header {
+    margin-bottom: 3rem;
   }
 }

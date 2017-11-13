@@ -82,6 +82,7 @@
 @fs-small: 1.4rem;
 @fs-btn: 1.7rem;
 @fs-btn-small: 1.2rem;
+@fs-form-btn: 2rem;
 @fs-input: 2rem;
 
 /* Basic settings */
@@ -104,6 +105,21 @@ button, input, a, textarea {
 :-moz-placeholder           {font-size:@fs-small;color:@text-input;text-transform:uppercase;}/* Firefox 18- */
 :-ms-input-placeholder      {font-size:@fs-small;color:@text-input;text-transform:uppercase;}
 
+.block {
+	&-title {
+		.black();
+		font-size: @fs-title;
+	}
+	&-subtitle {
+		font-size: @fs-subtitle;
+	}
+}
+.block-padding() {
+	padding: 10rem 0rem 10rem;
+}
+.block-padding_mobile() {
+	padding: 4rem 0rem 4rem;
+}
 .button {
 	padding: 2rem 3rem;
 	//width: 100%;
@@ -116,29 +132,32 @@ button, input, a, textarea {
 	transition: all 0.2s;
 	&_blue {
 		background-color: @btn-blue;
+		&:hover {
+			cursor: pointer;
+			background-color: darken(@btn-blue, 10%);
+		}
 	}
 	&_yellow {
 		background-color: @btn-yellow;
-	}
-	&:hover {
-		cursor: pointer;
-		background-color: darken(@btn-blue, 5%);
+		&:hover {
+			cursor: pointer;
+			background-color: darken(@btn-yellow, 10%);
+		}
 	}
 }
 .form-input {
-	padding: 2.5rem 7rem 2.5rem 2.5rem;
+	padding: 2rem 7rem 2rem 2.5rem;
+	margin-bottom: 3rem;
 	width: 100%;
 	font-size: @fs-input;
 	background-color: @bg-input;
 	border: none;
 }
-.block-padding() {
-	padding: 10rem 0rem 10rem;
+.form-btn {
+	padding: 2rem;
+	width: 100%;
+	font-size: @fs-form-btn;
 }
-.block-padding_mobile() {
-	padding: 4rem 0rem 4rem;
-}
-
 /* Шапка сайта */
 .header {
 	min-height: 10rem;
@@ -190,7 +209,6 @@ button, input, a, textarea {
 		margin-top: 0;
 		margin-bottom: 3rem;
 		font-size: @fs-title-main;
-		.black();
 		text-transform: uppercase;
 		line-height: 1.375;
 	}
@@ -230,12 +248,10 @@ button, input, a, textarea {
 	&-block {
 		.block-padding();
 	}
-	&-header {
+	&-title {
 		margin-bottom: 5rem;
 		margin-top: 0;
-		.black();
 		color: @text-dark;
-		font-size: @fs-title;
 		text-align: right;
 	}
 	&-form {
@@ -246,7 +262,7 @@ button, input, a, textarea {
 				content: '';
 				width: 2rem;
 				height: 2rem;
-				top: 3rem;
+				top: 2.5rem;
 				right: 3rem;
 				background: url(../img/envelope.svg) 0 0 no-repeat;
 				background-size: 100%;
@@ -259,30 +275,27 @@ button, input, a, textarea {
 				content: '';
 				width: 2rem;
 				height: 2rem;
-				top: 3rem;
+				top: 2.5rem;
 				right: 3rem;
 				background: url(../img/phone.svg) 0 0 no-repeat;
 				background-size: 100%;
 			}
 		}
-		.form-input {
-			margin-bottom: 3rem;
+	}
+	&-wait {
+		display: flex;
+		min-height: 8rem;
+		align-items: center;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		p {
+			display: inline-block;
+			margin: 0;
+			text-align: right;
 		}
-		.wait-price {
-			display: flex;
-			min-height: 8rem;
-			align-items: center;
-			justify-content: flex-end;
-			flex-wrap: wrap;
-			p {
-				display: inline-block;
-				margin: 0;
-				text-align: right;
-			}
-			img {
-				width: 3rem;
-				margin-left: 3rem;
-			}
+		img {
+			width: 3rem;
+			margin-left: 3rem;
 		}
 	}
 	&-btn {
@@ -300,15 +313,11 @@ button, input, a, textarea {
 	}
 	&-header {
 		margin-bottom: 9rem;
-		h2 {
-			margin-top: 0;
-			margin-bottom: 2rem;
-			.black();
-			font-size: @fs-title-big;
-		}
-		p {
-			font-size: @fs-subtitle;
-		}
+	}
+	&-title {
+		margin-top: 0;
+		margin-bottom: 2rem;
+		font-size: @fs-title-big;
 	}
 	&-item {
 		p {
@@ -321,6 +330,45 @@ button, input, a, textarea {
 		img {
 			display: block;
 			margin: 0 auto;
+		}
+	}
+}
+/* Ищете конкретную деталь */
+.detail {
+	background: url(../img/detail-bg.jpg) center no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: @text-light;
+	&-block {
+		.block-padding();
+	}
+	&-header {
+		margin-bottom: 5rem;
+	}
+	&-title {
+		margin-top: 0;
+		margin-bottom: 3rem;
+	}
+	&-subtitle {
+		line-height: 1.2;
+		span {
+			text-transform: uppercase;
+		}
+	}
+	&-form {
+		margin-bottom: 2rem;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+	.call {
+		font-size: @fs-small;
+		&-wait {
+			margin-bottom: 3rem;
+		}
+		.phone {
+			margin-bottom: 0;
+			.extrabold();
+			font-size: @fs-title;
 		}
 	}
 }
@@ -388,7 +436,7 @@ button, input, a, textarea {
 		&-block {
 			.block-padding_mobile();
 		}
-		&-header {
+		&-title {
 			text-align: center;
 		}
 	}
@@ -398,13 +446,33 @@ button, input, a, textarea {
 		}
 		&-header {
 			margin-bottom: 4rem;
-			h2 {
-				font-size: @fs-title;
-			}
+		}
+		&-title {
+			font-size: @fs-title;
+		}
+	}
+	.detail {
+		&-block {
+			.block-padding_mobile();
 		}
 	}
 }
 @media (max-width: 550px) {
+	.form-input {
+		padding: 1.5rem 6rem 1.5rem 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.form-btn {
+		padding: 1.5rem;
+	}
+	.block {
+		&-title {
+			font-size: @fs-title-small;
+		}
+		&-subtitle {
+			font-size: @fs-subtitle-small;
+		}
+	}
 	.header {
 		.row {
 			.schedule {
@@ -424,12 +492,6 @@ button, input, a, textarea {
 		&-content {
 			padding: 4rem 1.7rem 2rem;
 		}
-		&-title {
-			font-size: @fs-title-small;
-		}
-		&-subtitle {
-			font-size: @fs-subtitle-small;
-		}
 		&-features {
 			li {
 				padding-bottom: 2rem;
@@ -439,7 +501,6 @@ button, input, a, textarea {
 	}
 	.price {
 		&-header {
-			font-size: @fs-title-small;
 			margin-bottom: 2rem;
 		}
 		&-form {
@@ -453,10 +514,6 @@ button, input, a, textarea {
 					top: 1.8rem;
 				}
 			}
-			.form-input {
-				padding: 1.5rem 6rem 1.5rem 1.5rem;
-				margin-bottom: 1rem;
-			}
 		}
 		&-btn {
 			padding: 1.5rem;
@@ -466,18 +523,18 @@ button, input, a, textarea {
 		&-block {
 			padding: 4rem 5rem 4rem;
 		}
-		&-header {
-			h2 {
-				font-size: @fs-title-small;
-			}
-			p {
-				font-size: @fs-subtitle-small;
-			}
-		}
 		&-item {
 			p {
 				font-size: @fs-small;
 			}
+		}
+	}
+	.detail {
+		&-header {
+			margin-bottom: 3rem;
+		}
+		.call-wait {
+
 		}
 	}
 }
