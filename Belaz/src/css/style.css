@@ -105,6 +105,32 @@ textarea:focus {
   background-color: #f2f2f2;
   border: none;
 }
+.input-email {
+  position: relative;
+}
+.input-email:before {
+  position: absolute;
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  top: 2.5rem;
+  right: 3rem;
+  background: url(../img/envelope.svg) 0 0 no-repeat;
+  background-size: 100%;
+}
+.input-tel {
+  position: relative;
+}
+.input-tel:before {
+  position: absolute;
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  top: 2.5rem;
+  right: 3rem;
+  background: url(../img/phone.svg) 0 0 no-repeat;
+  background-size: 100%;
+}
 .form-btn {
   padding: 2rem;
   width: 100%;
@@ -205,32 +231,6 @@ textarea:focus {
   color: #000000;
   text-align: right;
 }
-.price-form .input-email {
-  position: relative;
-}
-.price-form .input-email:before {
-  position: absolute;
-  content: '';
-  width: 2rem;
-  height: 2rem;
-  top: 2.5rem;
-  right: 3rem;
-  background: url(../img/envelope.svg) 0 0 no-repeat;
-  background-size: 100%;
-}
-.price-form .input-tel {
-  position: relative;
-}
-.price-form .input-tel:before {
-  position: absolute;
-  content: '';
-  width: 2rem;
-  height: 2rem;
-  top: 2.5rem;
-  right: 3rem;
-  background: url(../img/phone.svg) 0 0 no-repeat;
-  background-size: 100%;
-}
 .price-wait {
   display: flex;
   min-height: 8rem;
@@ -267,6 +267,9 @@ textarea:focus {
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 3.6rem;
+}
+.features-item {
+  padding: 0 2rem;
 }
 .features-item p {
   font-size: 1.8rem;
@@ -317,6 +320,7 @@ textarea:focus {
   margin-bottom: 0;
   font-family: 'ProximaNova_extra', sans-serif;
   font-size: 3rem;
+  color: #ffffff;
 }
 /* Мы гарантируем сохранность */
 .warranty {
@@ -352,6 +356,24 @@ textarea:focus {
 }
 .warranty-link:hover {
   color: #1a1a1a;
+}
+.bonuses .circle {
+  margin: 0 auto 4rem;
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.bonuses .bonus {
+  margin: 30% auto;
+}
+.bonuses .bonus-text {
+  font-family: 'ProximaNova_bold', sans-serif;
+  font-size: 3rem;
+}
+.bonuses .bonus-img {
+  height: 3.5rem;
 }
 @media (max-width: 992px) {
   .header .row .phone-link {
@@ -433,6 +455,12 @@ textarea:focus {
     padding: 1.5rem 6rem 1.5rem 1.5rem;
     margin-bottom: 1rem;
   }
+  .input-email:before {
+    top: 2rem;
+  }
+  .input-tel:before {
+    top: 1.8rem;
+  }
   .form-btn {
     padding: 1.5rem;
   }
@@ -460,12 +488,6 @@ textarea:focus {
   }
   .price-header {
     margin-bottom: 2rem;
-  }
-  .price-form .input-email:before {
-    top: 2rem;
-  }
-  .price-form .input-tel:before {
-    top: 1.8rem;
   }
   .price-btn {
     padding: 1.5rem;

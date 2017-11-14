@@ -154,6 +154,32 @@ button, input, a, textarea {
 	background-color: @bg-input;
 	border: none;
 }
+.input-email {
+	position: relative;
+	&:before {
+		position: absolute;
+		content: '';
+		width: 2rem;
+		height: 2rem;
+		top: 2.5rem;
+		right: 3rem;
+		background: url(../img/envelope.svg) 0 0 no-repeat;
+		background-size: 100%;
+	}
+}
+.input-tel {
+	position: relative;
+	&:before {
+		position: absolute;
+		content: '';
+		width: 2rem;
+		height: 2rem;
+		top: 2.5rem;
+		right: 3rem;
+		background: url(../img/phone.svg) 0 0 no-repeat;
+		background-size: 100%;
+	}
+}
 .form-btn {
 	padding: 2rem;
 	width: 100%;
@@ -255,34 +281,6 @@ button, input, a, textarea {
 		color: @text-dark;
 		text-align: right;
 	}
-	&-form {
-		.input-email {
-			position: relative;
-			&:before {
-				position: absolute;
-				content: '';
-				width: 2rem;
-				height: 2rem;
-				top: 2.5rem;
-				right: 3rem;
-				background: url(../img/envelope.svg) 0 0 no-repeat;
-				background-size: 100%;
-			}
-		}
-		.input-tel {
-			position: relative;
-			&:before {
-				position: absolute;
-				content: '';
-				width: 2rem;
-				height: 2rem;
-				top: 2.5rem;
-				right: 3rem;
-				background: url(../img/phone.svg) 0 0 no-repeat;
-				background-size: 100%;
-			}
-		}
-	}
 	&-wait {
 		display: flex;
 		min-height: 8rem;
@@ -321,6 +319,7 @@ button, input, a, textarea {
 		font-size: @fs-title-big;
 	}
 	&-item {
+		padding: 0 2rem;
 		p {
 			font-size: @fs-caption;
 		}
@@ -370,6 +369,7 @@ button, input, a, textarea {
 			margin-bottom: 0;
 			.extrabold();
 			font-size: @fs-title;
+			color: @text-light;
 		}
 	}
 }
@@ -408,6 +408,27 @@ button, input, a, textarea {
 		}
 	}
 }
+.bonuses {
+	.circle {
+		margin: 0 auto 4rem;
+		width: 10rem;
+		height: 10rem;
+		border: 2px solid @text-light;
+		border-radius: 50%;
+		vertical-align: middle;
+	}
+	.bonus {
+		margin: 30% auto;
+		&-text {
+			.bold();
+			font-size: @fs-title;
+		}
+		&-img {
+			height: 3.5rem;
+		}
+	}
+}
+
 @media (max-width: 992px) {
 	.header {
 		.row {
@@ -506,6 +527,16 @@ button, input, a, textarea {
 		padding: 1.5rem 6rem 1.5rem 1.5rem;
 		margin-bottom: 1rem;
 	}
+	.input-email {
+		&:before {
+			top: 2rem;
+		}
+	}
+	.input-tel {
+		&:before {
+			top: 1.8rem;
+		}
+	}
 	.form-btn {
 		padding: 1.5rem;
 	}
@@ -546,18 +577,6 @@ button, input, a, textarea {
 	.price {
 		&-header {
 			margin-bottom: 2rem;
-		}
-		&-form {
-			.input-email {
-				&:before {
-					top: 2rem;
-				}
-			}
-			.input-tel {
-				&:before {
-					top: 1.8rem;
-				}
-			}
 		}
 		&-btn {
 			padding: 1.5rem;
