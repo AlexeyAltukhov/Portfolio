@@ -1,8 +1,6 @@
 $(document).ready(function(){
   $('.features-list').slick({
     infinite: true,
-    //dots: true,
-    //arrows: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [

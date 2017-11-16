@@ -69,9 +69,11 @@ textarea:focus {
   margin-top: 0;
   font-family: 'ProximaNova_black', sans-serif;
   font-size: 3rem;
+  text-align: center;
 }
 .block-subtitle {
   font-size: 2rem;
+  text-align: center;
 }
 .button {
   padding: 2rem 3rem;
@@ -188,11 +190,13 @@ textarea:focus {
   font-size: 4rem;
   text-transform: uppercase;
   line-height: 1.375;
+  text-align: left;
 }
 .main-subtitle {
   margin-bottom: 10rem;
   font-size: 2.5rem;
   font-family: 'ProximaNova_extra', sans-serif;
+  text-align: left;
 }
 .main-features {
   font-size: 1.8rem;
@@ -357,6 +361,7 @@ textarea:focus {
 .warranty-link:hover {
   color: #1a1a1a;
 }
+/* Бонусы и скидки */
 .bonuses .circle {
   margin: 0 auto 4rem;
   width: 10rem;
@@ -374,6 +379,94 @@ textarea:focus {
 }
 .bonuses .bonus-img {
   height: 3.5rem;
+}
+/* Ответы на вопросы */
+.faq {
+  background-color: #0b3554;
+  color: #ffffff;
+  /* Оформление всплывающих окон */
+}
+.faq-block {
+  padding: 10rem 0rem 10rem 2rem;
+}
+.faq-header {
+  margin-bottom: 9rem;
+}
+.faq-title {
+  margin-bottom: 2rem;
+}
+.faq-questions {
+  margin-bottom: 2rem;
+  font-family: 'ProximaNova_bold', sans-serif;
+  font-size: 1.6rem;
+}
+.faq-questions-list {
+  padding-left: 0;
+}
+.faq-questions-item {
+  margin-bottom: 5rem;
+}
+.faq-questions a {
+  padding-left: 3rem;
+  color: #ffffff;
+  text-decoration: underline;
+}
+.faq-questions a:hover {
+  color: #337ab7;
+}
+.faq-questions a:active {
+  color: #579eff;
+  text-decoration: none;
+}
+.faq .manager {
+  width: 100%;
+}
+.faq .popup {
+  position: relative;
+}
+.faq .popup-win {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  z-index: 9;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  width: 90%;
+  min-height: 5rem;
+  text-align: left;
+  font-size: 1.4rem;
+  background-color: #ffffff;
+  color: #000000;
+}
+.faq .popup-win:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1.5rem;
+  left: 1.5rem;
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-bottom: 1.5rem solid #ffffff;
+}
+.faq .popup-win a {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  padding: 0;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #000000;
+}
+.faq .popup-win:target {
+  display: block;
+  pointer-events: auto;
+}
+.faq .refresh {
+  width: 2rem;
+  margin-left: -2rem;
 }
 @media (max-width: 992px) {
   .header .row .phone-link {
@@ -448,6 +541,23 @@ textarea:focus {
   }
   .warranty-title {
     margin-bottom: 4rem;
+  }
+  .faq-block {
+    padding: 4rem 2rem 0rem 4rem;
+  }
+  .faq-header {
+    margin-bottom: 3rem;
+  }
+  .faq-questions-item {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+  .faq-questions-item a {
+    padding-left: 1rem;
+  }
+  .faq .popup-win {
+    top: 1.5rem;
+    left: 1.5rem;
   }
 }
 @media (max-width: 550px) {
