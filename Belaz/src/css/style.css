@@ -413,6 +413,7 @@ textarea:focus {
 }
 .faq-questions a:hover {
   color: #337ab7;
+  text-decoration: none;
 }
 .faq-questions a:active {
   color: #579eff;
