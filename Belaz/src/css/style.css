@@ -543,7 +543,7 @@ textarea:focus {
     margin-bottom: 4rem;
   }
   .faq-block {
-    padding: 4rem 2rem 0rem 4rem;
+    padding: 4rem 2rem 3rem 4rem;
   }
   .faq-header {
     margin-bottom: 3rem;
@@ -558,6 +558,9 @@ textarea:focus {
   .faq .popup-win {
     top: 1.5rem;
     left: 1.5rem;
+  }
+  .faq .manager {
+    display: none;
   }
 }
 @media (max-width: 550px) {
