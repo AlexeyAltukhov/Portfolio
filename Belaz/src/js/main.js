@@ -1,4 +1,13 @@
 $(document).ready(function(){
+  /* Открыть/закрыть всплывающее окно */
+  $('.header-btn').on('click', function(event) {
+    event.preventDefault();
+    var offset = 0;
+    $('html, body').animate ({
+      scrollTop: $('#consultation').offset ().top - offset
+    }, 500);
+    return false;
+  });
   $('.features-list').slick({
     infinite: true,
     slidesToShow: 4,
