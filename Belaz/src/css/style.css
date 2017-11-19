@@ -65,6 +65,21 @@ textarea:focus {
   color: #818181;
   text-transform: uppercase;
 }
+.section {
+  text-align: center;
+}
+.section_light {
+  background-color: #ffffff;
+  color: #000000;
+}
+.section_blue {
+  background-color: #08243e;
+  color: #ffffff;
+}
+.section_light-blue {
+  background-color: #0b3554;
+  color: #ffffff;
+}
 .block-title {
   margin-top: 0;
   font-family: 'ProximaNova_black', sans-serif;
@@ -256,11 +271,6 @@ textarea:focus {
   width: 100%;
 }
 /* Вам не придется ждать */
-.features {
-  background-color: #08243e;
-  color: #ffffff;
-  text-align: center;
-}
 .features-block {
   padding: 10rem 0rem 10rem;
 }
@@ -290,8 +300,6 @@ textarea:focus {
 .detail {
   background: url(../img/detail-bg.jpg) center no-repeat;
   background-size: cover;
-  text-align: center;
-  color: #ffffff;
 }
 .detail-block {
   padding: 10rem 0rem 10rem;
@@ -327,13 +335,8 @@ textarea:focus {
   color: #ffffff;
 }
 /* Мы гарантируем сохранность */
-.warranty {
-  background-color: #ffffff;
-}
 .warranty-block {
   padding: 10rem 0rem 10rem;
-  color: #000000;
-  text-align: center;
 }
 .warranty-title {
   margin-bottom: 9rem;
@@ -382,9 +385,7 @@ textarea:focus {
 }
 /* Ответы на вопросы */
 .faq {
-  background-color: #0b3554;
-  color: #ffffff;
-  /* Оформление всплывающих окон */
+  /* всплывающие ответы на вопросы */
 }
 .faq-block {
   padding: 10rem 0rem 10rem 2rem;
@@ -468,6 +469,153 @@ textarea:focus {
 .faq .refresh {
   width: 2rem;
   margin-left: -2rem;
+}
+/* С нами удобно работать */
+.comfort {
+  background-color: #ffffff;
+  color: #000000;
+}
+.comfort .slick-prev:before {
+  color: #000000;
+}
+.comfort .slick-next:before {
+  color: #000000;
+}
+/* У нас собственный склад */
+.storage-block {
+  padding: 10rem 0rem 10rem;
+}
+.storage-header {
+  margin-bottom: 9rem;
+}
+.storage-title {
+  margin-bottom: 3rem;
+}
+.storage-list .arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 99;
+  width: 2rem;
+  height: 3rem;
+  border: none;
+}
+.storage-list .prev {
+  left: 4rem;
+  background: url(../img/storage/left-arrow.svg) center no-repeat;
+  background-size: 100%;
+}
+.storage-list .next {
+  right: 4rem;
+  background: url(../img/storage/right-arrow.svg) center no-repeat;
+  background-size: 100%;
+}
+.storage-item {
+  margin: 0 2rem;
+}
+.storage img {
+  margin: 0 auto;
+  width: 100%;
+}
+/* Сервисное обслуживание */
+.services .circle {
+  margin: 0 auto 4rem;
+  width: 16rem;
+  height: 16rem;
+  border: 5px solid #ffbc3b;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.services .service {
+  margin: 33% auto;
+}
+.services .service-text {
+  font-family: 'ProximaNova_bold', sans-serif;
+  font-size: 3rem;
+}
+.services .service-img {
+  height: 5.5rem;
+}
+.services .slick-prev:before {
+  color: #000000;
+}
+.services .slick-next:before {
+  color: #000000;
+}
+/* Необходима консультация */
+.consultation {
+  background: url(../img/consultation-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+.consultation-call {
+  margin-bottom: 6rem;
+}
+.consultation-form {
+  margin-bottom: 0;
+}
+.consultation-form .form-input {
+  margin-bottom: 0;
+}
+/* Приезжайте к нам в офис */
+.office {
+  background: url(../img/office-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+.office-block {
+  padding: 10rem 0rem 10rem;
+}
+.office-header {
+  margin-bottom: 9rem;
+}
+.office-address {
+  font-size: 1.8rem;
+}
+.office .phone {
+  margin-bottom: 0;
+  font-family: 'ProximaNova_extra', sans-serif;
+  font-size: 2.5rem;
+  color: #000000;
+}
+/* Подвал сайта */
+.footer {
+  min-height: 12rem;
+  background-color: #191919;
+}
+.footer .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 12rem;
+}
+.footer .row .developer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.footer .row .developer p {
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+.footer .row .phone {
+  text-align: center;
+  color: #ffffff;
+}
+.footer .row .phone p {
+  font-size: 1.4rem;
+}
+.footer .row .phone-link {
+  display: block;
+  margin-bottom: 0;
+  font-family: 'ProximaNova_black', sans-serif;
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+.footer-btn {
+  padding: 2rem 2.5rem;
+  font-size: 1.2rem;
+}
+.map {
+  height: 37.5rem;
 }
 @media (max-width: 992px) {
   .header .row .phone-link {
@@ -562,6 +710,34 @@ textarea:focus {
   }
   .faq .manager {
     display: none;
+  }
+  .storage-block {
+    padding: 4rem 1rem 4rem;
+  }
+  .storage-header {
+    margin-bottom: 3rem;
+  }
+  .consultation-call {
+    margin-bottom: 2rem;
+  }
+  .consultation-form .form-input {
+    margin-bottom: 1.5rem;
+  }
+  .office-block {
+    padding: 4rem 0rem 4rem;
+  }
+  .office-header {
+    margin-bottom: 3rem;
+  }
+  .footer .row {
+    padding: 1rem;
+  }
+  .footer .row .logo {
+    margin: 1rem;
+    text-align: center;
+  }
+  .footer .row .developer {
+    margin: 1rem;
   }
 }
 @media (max-width: 550px) {

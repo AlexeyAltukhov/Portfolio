@@ -80,6 +80,7 @@
 @fs-caption: 1.8rem;
 @fs-caption-small: 1.6rem;
 @fs-small: 1.4rem;
+@fs-micro: 1.2rem;
 @fs-btn: 1.7rem;
 @fs-btn-small: 1.2rem;
 @fs-form-btn: 2rem;
@@ -104,7 +105,21 @@ button, input, a, textarea {
 ::-moz-placeholder          {font-size:@fs-small;color:@text-input;text-transform:uppercase;}/* Firefox 19+ */
 :-moz-placeholder           {font-size:@fs-small;color:@text-input;text-transform:uppercase;}/* Firefox 18- */
 :-ms-input-placeholder      {font-size:@fs-small;color:@text-input;text-transform:uppercase;}
-
+.section {
+	text-align: center;
+	&_light {
+		background-color: @bg-light;
+		color: @text-dark;
+	}
+	&_blue {
+		background-color: @bg-blue;
+		color: @text-light;
+	}
+	&_light-blue {
+		background-color: @bg-light-blue;
+		color: @text-light;
+	}
+}
 .block {
 	&-title {
 		margin-top: 0;
@@ -308,9 +323,6 @@ button, input, a, textarea {
 }
 /* Вам не придется ждать */
 .features {
-	background-color: @bg-blue;
-	color: @text-light;
-	text-align: center;
 	&-block {
 		.block-padding();
 	}
@@ -341,8 +353,6 @@ button, input, a, textarea {
 .detail {
 	background: url(../img/detail-bg.jpg) center no-repeat;
 	background-size: cover;
-	text-align: center;
-	color: @text-light;
 	&-block {
 		.block-padding();
 	}
@@ -379,11 +389,8 @@ button, input, a, textarea {
 }
 /* Мы гарантируем сохранность */
 .warranty {
-	background-color: @bg-light;
 	&-block {
 		.block-padding();
-		color: @text-dark;
-		text-align: center;
 	}
 	&-title {
 		margin-bottom: 9rem;
@@ -435,8 +442,6 @@ button, input, a, textarea {
 }
 /* Ответы на вопросы */
 .faq {
-	background-color: @bg-light-blue;
-	color: @text-light;
 	&-block {
 		padding: 10rem 0rem 10rem 2rem;
 	}
@@ -475,7 +480,7 @@ button, input, a, textarea {
 	.manager {
 		width: 100%;
 	}
-	/* Оформление всплывающих окон */
+	/* всплывающие ответы на вопросы */
 	.popup {
 		position: relative;
 		&-win {
@@ -523,6 +528,160 @@ button, input, a, textarea {
 		width: 2rem;
 		margin-left: -2rem;
 	}
+}
+/* С нами удобно работать */
+.comfort {
+	background-color: @bg-light;
+	color: @text-dark;
+	.slick-prev:before {
+	  color: @text-dark;
+	}
+	.slick-next:before {
+	  color: @text-dark;
+	}
+}
+/* У нас собственный склад */
+.storage {
+	&-block {
+		padding: 10rem 0rem 10rem;
+	}
+	&-header {
+		margin-bottom: 9rem;		
+	}
+	&-title {
+		margin-bottom: 3rem;
+	}
+	&-list {
+		.arrow {
+			top: 50%;
+			transform: translateY(-50%);
+			position: absolute;
+			z-index: 99;
+			width: 2rem;
+			height: 3rem;
+			border: none;
+		}
+		.prev {
+			left: 4rem;
+			background: url(../img/storage/left-arrow.svg) center no-repeat;
+			background-size: 100%;
+		}
+		.next {
+			right: 4rem;
+			background: url(../img/storage/right-arrow.svg) center no-repeat;
+			background-size: 100%;
+		}
+	}
+	&-item {
+		margin: 0 2rem;
+	}
+	img {
+		margin: 0 auto;
+		width: 100%;
+	} 
+}
+/* Сервисное обслуживание */
+.services {
+	.circle {
+		margin: 0 auto 4rem;
+		width: 16rem;
+		height: 16rem;
+		border: 5px solid #ffbc3b;
+		border-radius: 50%;
+		vertical-align: middle;
+	}
+	.service {
+		margin: 33% auto;
+		&-text {
+			.bold();
+			font-size: @fs-title;
+		}
+		&-img {
+			height: 5.5rem;
+		}
+	}
+	.slick-prev:before {
+	  color: @text-dark;
+	}
+	.slick-next:before {
+	  color: @text-dark;
+	}
+}
+/* Необходима консультация */
+.consultation {
+	background: url(../img/consultation-bg.jpg) center no-repeat;
+	background-size: cover;	
+	&-call {
+		margin-bottom: 6rem;
+	}
+	&-form {
+		margin-bottom: 0;
+		.form-input {
+			margin-bottom: 0;
+		}
+	}
+}
+/* Приезжайте к нам в офис */
+.office {
+	background: url(../img/office-bg.jpg) center no-repeat;
+	background-size: cover;
+	&-block {
+		.block-padding();
+	}
+	&-header {
+		margin-bottom: 9rem;
+	}
+	&-address {
+		font-size: @fs-caption;
+	}
+	.phone {
+		margin-bottom: 0;
+		.extrabold();
+		font-size: @fs-subtitle-big;
+		color: @text-dark;
+	}
+}
+/* Подвал сайта */
+.footer {
+	min-height: 12rem;
+	background-color: @bg-dark;
+	.row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		min-height: 12rem;
+		.developer {
+			text-align: center;
+			font-size: @fs-micro;
+			color: @text-light;
+			p {
+				margin-bottom: 0;
+				text-transform: uppercase;
+			}
+		}
+		.phone {
+			text-align: center;
+			color: @text-light;
+			p {
+				font-size: @fs-small;
+			}
+			&-link {
+				display: block;
+				margin-bottom: 0;
+				//line-height: 2;
+				.black();
+				color: @text-light;
+				font-size: @fs-caption;
+			}
+		}
+	}
+	&-btn {
+		padding: 2rem 2.5rem;
+		font-size: @fs-btn-small;
+	}
+}
+.map {
+	height: 37.5rem;
 }
 @media (max-width: 992px) {
 	.header {
@@ -638,6 +797,44 @@ button, input, a, textarea {
 		}
 		.manager {
 			display: none;
+		}
+	}
+	.storage {
+		&-block {
+			padding: 4rem 1rem 4rem;
+		}
+		&-header {
+			margin-bottom: 3rem;
+		}
+	}
+	.consultation {
+		&-call {
+			margin-bottom: 2rem;
+		}
+		&-form {
+			.form-input {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+	.office {
+		&-block {
+			.block-padding_mobile();
+		}
+		&-header {
+			margin-bottom: 3rem;
+		}
+	}
+	.footer {
+		.row {
+			padding: 1rem;
+			.logo {
+				margin: 1rem;
+				text-align: center;
+			}
+			.developer {
+				margin: 1rem;
+			}
 		}
 	}
 }
