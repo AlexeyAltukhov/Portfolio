@@ -617,6 +617,60 @@ textarea:focus {
 .map {
   height: 37.5rem;
 }
+.toTop-arrow {
+  position: fixed;
+  display: none;
+  right: 3rem;
+  bottom: 3rem;
+  -webkit-transition: background 250ms ease-in-out;
+  -moz-transition: background 250ms ease-in-out;
+  transition: background 250ms ease-in-out;
+  opacity: 0.6;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #4c5b5c;
+}
+.toTop-arrow::before,
+.toTop-arrow::after {
+  position: absolute;
+  top: 50%;
+  -webkit-transition: background 250ms ease-in-out;
+  -moz-transition: background 250ms ease-in-out;
+  transition: background 250ms ease-in-out;
+  width: 16px;
+  height: 3px;
+  border-radius: 3px;
+  background: #ffbc3b;
+  content: "";
+}
+.toTop-arrow:active {
+  background: #ffbc3b;
+}
+.toTop-arrow:active::before,
+.toTop-arrow:active::after {
+  background: #4c5b5c;
+}
+.toTop-arrow::before {
+  -webkit-transform: rotate(-45deg) translate(0, -50%);
+  -moz-transform: rotate(-45deg) translate(0, -50%);
+  -ms-transform: rotate(-45deg) translate(0, -50%);
+  -o-transform: rotate(-45deg) translate(0, -50%);
+  transform: rotate(-45deg) translate(0, -50%);
+  left: 10px;
+}
+.toTop-arrow::after {
+  -webkit-transform: rotate(45deg) translate(0, -50%);
+  -moz-transform: rotate(45deg) translate(0, -50%);
+  -ms-transform: rotate(45deg) translate(0, -50%);
+  -o-transform: rotate(45deg) translate(0, -50%);
+  transform: rotate(45deg) translate(0, -50%);
+  right: 10px;
+}
 @media (max-width: 992px) {
   .header .row .phone-link {
     font-size: 1.4rem;

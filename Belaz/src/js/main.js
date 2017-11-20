@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  /* Открыть/закрыть всплывающее окно */
+  /* Переход к блоку "Необходима консультация"" */
   $('.header-btn').on('click', function(event) {
     event.preventDefault();
     var offset = 0;
@@ -8,6 +8,20 @@ $(document).ready(function(){
     }, 500);
     return false;
   });
+  /* Отображение/скрытие кнопки "Вверх" */
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 0) {
+      $('.toTop-arrow').fadeIn();
+    } else {
+      $('.toTop-arrow').fadeOut();
+    }
+  });
+  /* скрлл вверх при нажатии на кнопку "Вверх" */
+  $('#toTop').on('click', function(event) {
+    event.preventDefault();
+    $('body,html').animate({scrollTop: 0}, 400); return false;
+  });
+  /* слайдеры */
   $('.features-list').slick({
     infinite: true,
     slidesToShow: 4,
