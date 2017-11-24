@@ -14,6 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -53,7 +54,7 @@
           <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
             <div class="wrap">
               <div class="wrap-block">
-                <button class="button button_blue header-btn">заказать звонок</button>
+                <button class="button button_blue header-btn pulse animated infinite">заказать звонок</button>
               </div>
             </div>
           </div>
@@ -63,7 +64,7 @@
 		</header>
 
     <!-- Заголовок -->
-    <main class="main">
+    <main class="main parallax-window" data-parallax="scroll" data-image-src="img/main-bg.jpg">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-7 col-sm-9 col-xs-12 col-xs-offset-0">
@@ -71,10 +72,10 @@
               <h1 class="block-title main-title">Оригинальные запчасти<br>для Белаз</h1>
               <p class="block-subtitle main-subtitle">с бесплатной доставкой<br>в Ваш город!</p>
               <ul class="list-unstyled main-features">
-                <li class="main-features_img-1">Дилерские цены - ниже на 20%,<br>работаем без посредников!</li>
-                <li class="main-features_img-2">Срочная бесплатная доставка<br>за 7 дней</li>
-                <li class="main-features_img-3">Даем рассрочку<br>6 месяцев</li>
-                <li class="main-features_img-4">Даем гарантию<br>от 12 месяцев</li>
+                <li class="main-features_img-1 wow fadeIn" data-wow-duration="1s">Дилерские цены - ниже на 20%,<br>работаем без посредников!</li>
+                <li class="main-features_img-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">Срочная бесплатная доставка<br>за 7 дней</li>
+                <li class="main-features_img-3 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">Даем рассрочку<br>6 месяцев</li>
+                <li class="main-features_img-4 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">Даем гарантию<br>от 12 месяцев</li>
               </ul>
             </div>
           </div>
@@ -93,29 +94,29 @@
               <h2 class="block-title price-title">Получите прайс прямо сейчас<br>на электронную почту</h2>
             </div>
 
-            <form class="price-form" action="#">
+            <form class="price-form page-form" action="mailer/smart.php" method="post">
 
               <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6">
-                <div class="input-email">
-                  <input class="form-input" type="email" name="email" placeholder="Введите ваш e-mail">
+                <div class="input-email wow fadeIn">
+                  <input class="form-input" type="email" name="user_mail" placeholder="Введите ваш e-mail" required>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="input-tel">
-                  <input class="form-input" type="tel" name="usrtel" placeholder="Введите ваш телефон">
+                <div class="input-tel wow fadeIn">
+                  <input class="form-input phone-mask" type="tel" name="user_tel" placeholder="Введите ваш телефон" required>
                 </div>
               </div>
 
               <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6">
-                <div class="price-wait">
+                <div class="price-wait wow fadeIn">
                     <p>Прайс придет к Вам на почту<br>в течение 5 минут!</p>
                     <img src="img/clock.svg" alt="clock">
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-4 col-sm-6">
-                <button class="button button_blue price-btn">получить прайс</button>
+                <button class="button button_blue price-btn wow fadeIn" data-wow-duration="2s" type="submit" data-submit="...Отправка">получить прайс</button>
               </div>
 
             </form>
@@ -137,28 +138,28 @@
 
             <div class="features-list">
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s">
                 <div class="features-img">
                   <img src="img/features/engine.png" alt="engine">
                 </div>
                 <p>Любые типы деталей<br>от шайбы до двигателя!</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="features-img">
                   <img src="img/features/dump-truck.png" alt="dump-truck">
                 </div>
                 <p>Все модификации Белаз<br>от 45т до 450т</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
                 <div class="features-img">
                   <img src="img/features/calendar.png" alt="calendar">
                 </div>
                 <p>Отгружаем в день заказа!</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
                 <div class="features-img">
                   <img src="img/features/map.png" alt="map">
                 </div>
@@ -186,28 +187,28 @@
               </div>
             </div>
 
-            <form class="detail-form" action="#">
+            <form class="detail-form page-form" action="mailer/smart.php" method="post">
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                  <div class="input-article">
+                  <div class="input-article wow fadeIn">
                     <input class="form-input" type="text" name="article" placeholder="Введите артикул детали">
                   </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                  <div class="input-tel">
-                    <input class="form-input" type="tel" name="usrtel" placeholder="Введите ваш телефон">
+                  <div class="input-tel wow fadeIn">
+                    <input class="form-input phone-mask" type="tel" name="user_tel" placeholder="Введите ваш телефон" required>
                   </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12">
-                  <button class="button button_yellow form-btn">узнать цену</button>
+                  <button class="button button_yellow form-btn wow fadeIn" type="submit" data-submit="...Отправка">узнать цену</button>
                 </div>
               </div>
             </form>
 
             <div class="col-md-12">
-              <div class="call">
+              <div class="call wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <p class="call-wait">Мы перезвоним Вам в течение 3 минут и назовем цену детали!</p>
                 <p class="call-us">Или Вы можете перезвонить нам сами:</p>
                 <a class="phone-link phone" href="tel: +78182474725">+7(818) 247-47-25</a>
@@ -231,7 +232,7 @@
 
             <div class="warranty-list">
               <div class="col-md-4">
-                <div class="warranty-item">
+                <div class="warranty-item wow fadeIn" data-wow-duration="1s">
                   <div class="warranty-img">
                     <img src="img/warranty/warranty-1.jpg" alt="warranty-1">
                   </div>
@@ -243,7 +244,7 @@
               </div>
 
               <div class="col-md-4">
-                <div class="warranty-item">
+                <div class="warranty-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="warranty-img">
                     <img src="img/warranty/warranty-2.jpg" alt="warranty-2">
                   </div>
@@ -255,7 +256,7 @@
               </div>
 
               <div class="col-md-4">
-                <div class="warranty-item">
+                <div class="warranty-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                   <div class="warranty-img">
                     <img src="img/warranty/warranty-3.jpg" alt="warranty-3">
                   </div>
@@ -284,28 +285,28 @@
 
             <div class="features-list">
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s">
                 <div class="circle">
                   <p class="bonus bonus-text">10%</p>
                 </div>
                 <p>Дополнительная скидка 10% на вторую запчасть и любые последующие</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="circle">
                   <p class="bonus bonus-text">20%</p>
                 </div>
                 <p>Скидка 20% при заключении договора на годовое сервисное обслуживание</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
                 <div class="circle">
                   <img class="bonus bonus-img" src="img/bonuses/delivery-truck.png" alt="delivery-truck">
                 </div>
                 <p>Бесплатная доставка по всей России для всех клиентов</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
                 <div class="circle">
                   <img class="bonus bonus-img" src="img/bonuses/telemarketer.png" alt="telemarketer">
                 </div>
@@ -333,52 +334,53 @@
             <div class="col-md-6 col-sm-7 col-xs-12">
               <div class="faq-questions">
                 <ol class="faq-questions-list">
-                  <li class="faq-questions-item question-1"><a href="#answer-1" >Как заказать деталь правильно?</a>
-                    <div class="popup">
-                      <div id="answer-1" class="popup-win">
-                        <a href="#close">&times;</a>
-                        <div class="popup-answer">
+                  <li class="faq-questions-item question-1"><a href="#" >Как заказать деталь правильно?</a>
+                    <div class="answer">
+                      <div class="answer-win">
+                        <button class="answer-close">&times;</button>
+                        <div class="answer-text">
                           <p>Для заказа детали необходимо правильно указать её каталожный номер(артикул).</p>
                           <p>Если Вы не знаете номер детали, просто свяжитесь с нами и мы Вам поможем!</p>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="faq-questions-item question-2"><a href="#answer-2">Что делать, если запчасть не понадобилась?</a>
-                    <div class="popup">
-                      <div id="answer-2" class="popup-win">
-                        <a href="#close">&times;</a>
-                        <div class="popup-answer">
+                  <li class="faq-questions-item question-2"><a href="#">Что делать, если запчасть не понадобилась?</a>
+                    <div class="answer">
+                      <div class="answer-win">
+                        <button class="answer-close">&times;</button>
+                        <div class="answer-text">
                           <p>В случае, если деталь не понадобилась, либо Вы ошиблись с номером детали, Вы можете в течение 14 календарных дней оформить возврат.</p>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="faq-questions-item question-3"><a href="#answer-3">Можете ли Вы установить деталь?</a>
-                    <div class="popup">
-                      <div id="answer-3" class="popup-win">
-                        <a href="#close">&times;</a>
-                        <div class="popup-answer">
+                  <li class="faq-questions-item question-3"><a href="#">Можете ли Вы установить деталь?</a>
+                    <div class="answer">
+                      <div class="answer-win">
+                        <button class="answer-close">&times;</button>
+                        <div class="answer-text">
                           <p>Наша компания имеет широкую сеть авторизованных сервисных центров и Вы без проблем можете установить деталь у нас.</p>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="faq-questions-item question-4"><a href="#answer-4">В чем преимущества оригинальных деталей?</a>
-                    <div class="popup">
-                      <div id="answer-4" class="popup-win">
-                        <a href="#close">&times;</a>
-                        <div class="popup-answer">
+                  <li class="faq-questions-item question-4"><a href="#">В чем преимущества оригинальных деталей?</a>
+                    <div class="answer">
+                      <div class="answer-win">
+                        <button class="answer-close">&times;</button>
+                        <div class="answer-text">
                           <p>Преимуществами оригинальных деталей являются высокое качество изготовления, высокий ресурс, расширенная гарантия.</p>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="faq-questions-item question-5"><a href="#answer-5">Где можно найти артикул детали?</a>
-                    <div class="popup">
-                      <div id="answer-5" class="popup-win">
-                        <a href="#close">&times;</a>
-                        <div class="popup-answer">
+                  <li class="faq-questions-item question-5"><a href="#">Где можно найти артикул детали?</a>
+                    <div class="answer">
+                      <div class="answer-win">
+                        <button class="answer-close">&times;</button>
+                        <!-- <a href="#close">&times;</a> -->
+                        <div class="answer-text">
                           <p>Код детали (артикул) можно найти на самой детали, на упаковке или в документации на деталь.</p>
                         </div>
                       </div>
@@ -411,21 +413,21 @@
 
             <div class="comfort-list">
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s">
                 <div class="features-img">
                   <img src="img/comfort/comfort-1.png" alt="comfort-1">
                 </div>
                 <p>Вы вносите предоплату<br>в размере 50%<br>от стоимости запчасти</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="features-img">
                   <img src="img/comfort/comfort-2.png" alt="comfort-2">
                 </div>
                 <p>Отправляем запчасти<br>в день заказа</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
                 <div class="features-img">
                   <img src="img/comfort/comfort-3.png" alt="comfort-3">
                 </div>
@@ -451,16 +453,16 @@
 
             <div class="test">
               <div class="storage-list">
-                <div class="storage-item">
+                <div class="storage-item wow fadeIn" data-wow-duration="1s">
                   <img src="img/storage/storage-1.jpg" alt="storage-1">
                 </div>
-                <div class="storage-item">
+                <div class="storage-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                   <img src="img/storage/storage-2.jpg" alt="storage-2">
                 </div>
-                <div class="storage-item">
+                <div class="storage-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                   <img src="img/storage/storage-3.jpg" alt="storage-3">
                 </div>
-                <div class="storage-item">
+                <div class="storage-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
                   <img src="img/storage/storage-4.jpg" alt="storage-4">
                 </div>
               </div> 
@@ -481,21 +483,21 @@
 
             <div class="services-list">
 
-              <div class="features-item">
+              <div class="features-item wow fadeIn">
                 <div class="circle">
                   <img class="service service-img" src="img/service/delivery.png" alt="delivery">
                 </div>
                 <p>Организуем выезд специалистов<br>в течение двух дней </p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeIn">
                 <div class="circle">
                   <img class="service service-img" src="img/service/toolbox.png" alt="toolbox">
                 </div>
                 <p>Бригады укомплектованы всем необходимым оборудованием для производства работ любой сложности</p>
               </div>
 
-              <div class="features-item">
+              <div class="features-item wow fadeIn">
                 <div class="circle">
                   <img class="service service-img" src="img/service/certificate.png" alt="certificate">
                 </div>
@@ -523,23 +525,23 @@
             </div>
 
             <div class="col-md-12">
-              <div class="call consultation-call">
+              <div class="call consultation-call wow fadeInDown" data-wow-duration="1s">
                 <p class="call-us">Звоните нам по телефону:</p>
                 <a class="phone-link phone" href="tel: +78182474725">+7(818) 247-47-25</a>
               </div>
             </div>
 
-            <form class="detail-form consultation-form" action="#">
+            <form class="detail-form consultation-form page-form" action="mailer/smart.php" method="post">
               <div class="row">
 
                 <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
-                  <div class="input-tel">
-                    <input class="form-input" type="tel" name="usrtel" placeholder="Введите ваш телефон">
+                  <div class="input-tel wow fadeIn">
+                    <input class="form-input phone-mask" type="tel" name="user_tel" placeholder="Введите ваш телефон" required>
                   </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                  <button class="button button_yellow form-btn">перезвонить сейчас</button>
+                  <button class="button button_yellow form-btn wow fadeIn" type="submit" data-submit="...Отправка">перезвонить сейчас</button>
                 </div>
               </div>
             </form>
@@ -563,7 +565,7 @@
             </div>
 
             <div class="col-md-12">
-              <div class="office-contacts">
+              <div class="office-contacts wow fadeInUp" data-wow-duration="1s">
                 <p class="office-address">г. Архангельск, пр. Троицкий, 65</p>
                 <a class="phone-link phone" href="tel: +78182474725">+7(818) 247-47-25</a>
               </div>
@@ -609,6 +611,26 @@
       </div>
     </footer>
 
+    <!-- Модальные окна -->
+    <!-- Получить консультацию -->
+    <div class="popup">
+      <div class="popup-dialog">
+        <div class="popup-content">
+          <button class="popup-close">&times;</button>
+          <h4 class="popup-header">Если у Вас есть артикул - <br>введите его в поле ниже и получите цену<br><span>прямо сейчас!</span></h4>
+          <form class="popup-form" action="mailer/smart.php" method="post">
+            <div class="input-article">
+              <input class="form-input form-input_article" type="text" name="article" placeholder="Введите артикул детали">
+            </div>
+            <div class="input-tel">
+              <input class="form-input phone-mask" type="tel" name="user_tel" placeholder="Введите ваш телефон" required>
+            </div>
+            <button class="button button_yellow form-btn" type="submit" data-submit="...Отправка">узнать цену</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -621,8 +643,16 @@
     <link rel="stylesheet" href="slick/slick-theme.css">
     <!-- Подключаем саму библиотеку slick slider -->
     <script src="slick/slick.min.js"></script>
-    <!-- Скрипты для слайдера -->
+    <!-- Скрипты для слайдера, попапов -->
     <script src="js/main.js"></script>
-   
+    <!-- Маска телефона -->
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <!-- Parallax-эффект -->
+    <script src="js/parallax.min.js"></script>
+    <!-- Анимация при прокрутке -->
+    <script src="js/wow.min.js"></script>
+       <script>
+         new WOW().init();
+       </script>
   </body>
 </html>

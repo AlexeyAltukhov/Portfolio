@@ -1,11 +1,54 @@
 $(document).ready(function(){
-  /* Переход к блоку "Необходима консультация"" */
+  /* Маска телефона в input'е формы обратной связи */
+  $(".phone-mask").mask("+7 (999) 999-99-99");
+  /* Открыть попап с формой заявки */
   $('.header-btn').on('click', function(event) {
     event.preventDefault();
-    var offset = 0;
-    $('html, body').animate ({
-      scrollTop: $('#consultation').offset ().top - offset
-    }, 500);
+    $('.popup').fadeIn(100);
+  });
+  /* Закрыть попап с формой заявки */
+  $('.popup-close').on('click', function(event) {
+    event.preventDefault();
+    $('.popup').fadeOut(100);
+  });
+  /* Добавление класса active для выбранного вопроса */
+  $('.faq-questions-item a').on('click', function(event) {
+    event.preventDefault();
+    $('.faq-questions-item').removeClass('active');
+    $(this).parent().addClass('active');
+  });
+  /* Закрыть попап с ответом на вопрос */
+  $('.answer-close').on('click', function(event) {
+    event.preventDefault();
+    $('.faq-questions-item').removeClass('active');
+  });
+  /* Отправка попап формы обратной связи */
+  $('.popup-form').submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function() {
+      $(this).find("input").val("");
+      alert("Спасибо за заявку. Скоро мы с Вами свяжемся!");
+      $('.popup-form').trigger("reset");
+      $('.popup').fadeOut();
+    });
+    return false;
+  });
+  /* Отправка формы обратной связи на странице */
+  $('.page-form').submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function() {
+      $(this).find("input").val("");
+      alert("Спасибо за заявку. Скоро мы с Вами свяжемся!");
+      $('.page-form').trigger("reset");
+    });
     return false;
   });
   /* Отображение/скрытие кнопки "Вверх" */

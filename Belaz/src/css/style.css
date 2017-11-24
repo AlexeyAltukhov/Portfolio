@@ -47,23 +47,47 @@ textarea:focus {
   font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 ::-moz-placeholder {
   font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 /* Firefox 19+ */
 :-moz-placeholder {
   font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 /* Firefox 18- */
 :-ms-input-placeholder {
   font-size: 1.4rem;
   color: #818181;
   text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .section {
   text-align: center;
@@ -121,6 +145,10 @@ textarea:focus {
   font-size: 2rem;
   background-color: #f2f2f2;
   border: none;
+  color: #818181;
+}
+.form-input_article {
+  padding-right: 2rem;
 }
 .input-email {
   position: relative;
@@ -190,10 +218,6 @@ textarea:focus {
   font-size: 1.2rem;
 }
 /* Заголовок со списком преимуществ */
-.main {
-  background: url(../img/main-bg.jpg) center no-repeat;
-  background-size: cover;
-}
 .main-content {
   padding: 9rem 10rem 6rem;
   background-color: #f7b516;
@@ -407,6 +431,10 @@ textarea:focus {
 .faq-questions-item {
   margin-bottom: 5rem;
 }
+.faq-questions-item.active .answer-win {
+  opacity: 1;
+  z-index: auto;
+}
 .faq-questions a {
   padding-left: 3rem;
   color: #ffffff;
@@ -423,25 +451,28 @@ textarea:focus {
 .faq .manager {
   width: 100%;
 }
-.faq .popup {
+.faq .answer {
   position: relative;
 }
-.faq .popup-win {
-  display: none;
-  pointer-events: none;
+.faq .answer-win {
   position: absolute;
+  opacity: 0;
+  z-index: -9;
   top: 3rem;
   left: 3rem;
-  z-index: 9;
-  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  padding: 1.5rem 4rem 1.5rem 1.5rem;
   width: 90%;
   min-height: 5rem;
   text-align: left;
   font-size: 1.4rem;
   background-color: #ffffff;
   color: #000000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-.faq .popup-win:before {
+.faq .answer-win:before {
   content: '';
   display: block;
   position: absolute;
@@ -453,18 +484,15 @@ textarea:focus {
   border-right: 1rem solid transparent;
   border-bottom: 1.5rem solid #ffffff;
 }
-.faq .popup-win a {
+.faq .answer-close {
   position: absolute;
   top: 0.5rem;
   right: 1.5rem;
-  padding: 0;
   font-size: 2.5rem;
-  text-decoration: none;
+  text-align: center;
+  border: none;
+  background-color: transparent;
   color: #000000;
-}
-.faq .popup-win:target {
-  display: block;
-  pointer-events: auto;
 }
 .faq .refresh {
   width: 2rem;
@@ -614,9 +642,11 @@ textarea:focus {
   padding: 2rem 2.5rem;
   font-size: 1.2rem;
 }
+/* Google карта */
 .map {
   height: 37.5rem;
 }
+/* Кнопка перемещения на верх страницы */
 .toTop-arrow {
   position: fixed;
   display: none;
@@ -670,6 +700,55 @@ textarea:focus {
   -o-transform: rotate(45deg) translate(0, -50%);
   transform: rotate(45deg) translate(0, -50%);
   right: 10px;
+}
+/* Модальное окно */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-content {
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  max-width: 35rem;
+  background-color: #ffffff;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.popup-header {
+  padding: 2rem;
+  font-family: 'ProximaNova_bold', sans-serif;
+  font-size: 2rem;
+}
+.popup-header span {
+  text-transform: uppercase;
+}
+.popup-form {
+  margin-bottom: 2rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.popup-close {
+  position: absolute;
+  top: -1.5rem;
+  right: -2rem;
+  width: 2rem;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  color: #ffffff;
+}
+.popup .form-input {
+  margin-bottom: 1.5rem;
 }
 @media (max-width: 992px) {
   .header .row .phone-link {
@@ -793,11 +872,24 @@ textarea:focus {
   .footer .row .developer {
     margin: 1rem;
   }
+  .popup .form-input {
+    padding: 1.5rem 4rem 1.5rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .popup .form-input_article {
+    padding-right: 1.5rem;
+  }
+  .popup .input-tel:before {
+    top: 1.8rem;
+  }
 }
 @media (max-width: 550px) {
   .form-input {
     padding: 1.5rem 6rem 1.5rem 1.5rem;
     margin-bottom: 1rem;
+  }
+  .form-input_article {
+    padding-right: 1.5rem;
   }
   .input-email:before {
     top: 2rem;
@@ -851,5 +943,39 @@ textarea:focus {
   }
   .warranty-link {
     font-size: 1.6rem;
+  }
+  .popup {
+    /* Firefox 19+ */
+    /* Firefox 18- */
+  }
+  .popup ::-webkit-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .popup ::-moz-placeholder {
+    font-size: 1.2rem;
+  }
+  .popup :-moz-placeholder {
+    font-size: 1.2rem;
+  }
+  .popup :-ms-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .popup-content {
+    right: -20%;
+    left: 48%;
+  }
+  .popup-header {
+    font-size: 1.6rem;
+  }
+  .popup .form-input {
+    font-size: 1.4rem;
+  }
+  .popup .form-btn {
+    font-size: 1.5rem;
+  }
+  .popup .input-tel:before {
+    top: 1.6rem;
+    right: 2rem;
+    width: 1.5rem;
   }
 }
